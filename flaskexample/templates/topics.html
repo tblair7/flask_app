@@ -37,29 +37,71 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
+<style>
+
+  body {
+    background-color: #333;
+  }
+
+div {
+    background-color: #333;
+  }
+
+
+p {
+  line-height: 0.7;
+}
+
+
+.button {
+ background-color: #FABB3B; /* Green */
+ color: #27291C;
+ padding: 12px 24px;
+ text-align: center;
+ text-decoration: none;
+ display: inline-block;
+ font-size: 18px;
+ margin: 4px 2px;
+ cursor: pointer;
+ text-shadow:none;
+}
+
+
+
+</style>
 
   <body>
 
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
-        </div><!--/.nav-collapse -->
+        </div>
+            <a class="button" href='/' role = 'button'> Home </a>
         </div>
     </nav>
 <br><br>
 
 
-    <div class="container" style="font-family:arial black">
+    <div class="container" style="font-family:Helvetica Neue">
 
-        <h1>Gathering Steam - {{game}}
-        <img class="game_image" src='{{game_pic}}' style="height:140px;" align = 'right'></h1>
-        <p class="lead"><i>Topics Related to Anomalous Changes in {{game}} Game Reviews via Sentiment Analysis </i></p>
+        <h1>
+            <font color="white" size = '10'>
+                <i>Gathering <font color="#FABB3B">Steam </i></br>
+                     <font color="white" size = '6'> {{game}}
+
+                <img class="game_image" src='{{game_pic}}' style="height:140px;" align = 'right'>
+        </h1>
+
+        <p class="lead">
+            <i> Providing Game Developers an Early Alert of Drops in Ratings & Avenues of Intervention </i>
+            <!-- Topics Related to Anomalous Changes in {{game}} Game Reviews via Sentiment Analysis -->
+        </p>
 
         <body>
           <div id="vis"></div>
 
           <script>
             const spec = "{{plot}}";
-            var opt = {"width": 800, "height:":800}
+            var opt = {"width": 800, "height:":800, 'theme': 'dark', 'config':{'background': '#333', 'line': {'color': 'white'}}}
           	vegaEmbed('#vis', spec, opt)
             	// result.view provides access to the Vega View API
               .then(result => console.log(result))
@@ -67,11 +109,11 @@
           </script>
         </body>
 
-        <p>
-            In the plot above, the black line shows the moving average of {{game}}'s review ratings over time. The red and green points are days in which my model has predicted {{game}}'s review ratings to significantly drop or rise, respectively. Hovering over any of these points will display a few topics found within that timeframe that correspond to the predicted changes alongside the most extreme negative or positive review from that day.
+        <p> <font color="white" size = '3'>
+            In the plot above, the white line shows a moving average of {{game}}'s review ratings over time. The red and green points are days in which my model has predicted {{game}}'s review ratings to significantly drop or rise, respectively. By hovering over these points, game developers are provided topics to address that reflect these predicted changes. Additionally, the most extreme negative or positive review from that day is displayed.
         </p>
 
-        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <!--    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="static/js/bootstrap.min.js"></script>
 
     </div><!-- /.container -->
@@ -81,9 +123,9 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="static/js/bootstrap.min.js"></script>
+    <!-- <script src="static/js/bootstrap.min.js"></script>
 
-<script src="static/js/bootstrap.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>                     -->
 
   </body>
 </html>
