@@ -18,7 +18,7 @@ def ARK():
     return render_template('topics.html',
                             game = 'ARK',
                             game_pic = '../static/images/ARK.jpeg',
-                            plot = '../static/plots/interactive_ARK.json',
+                            plot = '../static/plots/interactive_ARK2.json',
                             accuracy = '90.8')
 
 
