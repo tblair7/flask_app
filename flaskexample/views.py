@@ -3,6 +3,13 @@ from flask import request
 from flaskexample import app
 import pandas as pd
 import pickle as pckl
+import os
+
+#from flask_wtf import FlaskForm
+#from wtforms import StringField, SubmitField
+
+from flask import Flask, render_template, request
+#app = Flask(__name__)
 
 
 @app.route('/')
@@ -10,6 +17,29 @@ import pickle as pckl
 def index():
     return render_template("index.html",
        title = 'Tyler Blair - Insight Data Science',)
+
+
+@app.route('/suggested',methods=['POST', 'GET'])
+def suggested():
+    if request.method=='POST':
+       suggestion=request.form['game']
+
+       f = open("suggestions.txt","a")
+       f.write(suggestion + "\n")
+       f.close()
+
+       return render_template('suggested.html',
+                              suggestion = suggestion)
+
+    else:
+        return "error"
+
+
+#@app.route('/', methods=['POST'])
+#def my_form_post():
+#    text = request.form['text']
+#    processed_text = text.upper()
+#    return processed_text
 
 
 @app.route('/ARK')

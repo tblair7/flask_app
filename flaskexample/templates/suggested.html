@@ -38,8 +38,6 @@ body {
   background-color: #333;
 }
 
-
-
 .submit {
   background-color: #FABB3B; /* Green */
   border: #27291C;
@@ -53,6 +51,7 @@ body {
   cursor: pointer;
   text-shadow:none;
 }
+
 
 
 .jumbotron {
@@ -93,6 +92,7 @@ body {
 
           </p>
 
+
           <form action = "/suggested" method = "POST">
               <p>
                   <font color = 'white'> Is there another game you'd like to see? </font> </br>
@@ -100,6 +100,9 @@ body {
               </p>
               <p>
                   <b><input type = "submit" value = "Submit" class='button' /></b>
+              </p>
+              <p>
+                  <font color = 'white'> Thank you for suggesting <b>{{suggestion}}</b> as another example!</font>
               </p>
           </form>
 
